@@ -221,7 +221,7 @@ def render_page():
             st.markdown(
                 """
                 <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 0.65rem; padding: 0.65rem 0.85rem; font-size: 0.82rem; color: #475569;">
-                    💡 <strong>Duration Check:</strong> Valid shifts center tightly around 8.5 to 9.2 hours. Shifts with missing check-outs (51 records) are quarantined to maintain duration integrity.
+                    💡 <strong>Duration Check:</strong> Valid shifts center tightly around 8.5 to 9.2 hours. Shifts with missing check-outs (14 records) are quarantined to maintain duration integrity.
                 </div>
                 """,
                 unsafe_allow_html=True,
