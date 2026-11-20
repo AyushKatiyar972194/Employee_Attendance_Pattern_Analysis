@@ -488,6 +488,13 @@ def render_home_sidebar() -> None:
                 <div style="font-size: 0.75rem; color: #94A3B8; font-weight: 500;">
                     Operations Intelligence Portal
                 </div>
+                <div style="margin-top: 0.85rem; padding: 0.65rem 0.75rem; background: rgba(30, 41, 59, 0.85); border: 1px solid #334155; border-radius: 0.65rem; font-size: 0.75rem;">
+                    <div style="font-weight: 700; color: #F8FAFC;">👨‍💻 Ayush Katiyar</div>
+                    <div style="font-size: 0.70rem; color: #94A3B8; margin-bottom: 0.4rem;">Roll No: 2500320140036 · ABES EC</div>
+                    <a href="https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis" target="_blank" style="color: #60A5FA; text-decoration: none; font-weight: 600; font-size: 0.72rem;">
+                        📂 GitHub Repository ↗
+                    </a>
+                </div>
             </div>
             """,
             unsafe_allow_html=True,

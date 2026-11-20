@@ -124,12 +124,23 @@ def build_presentation():
         return pic
 
     # -------------------------------------------------------------
-    # 1. Slide 1 (Title Slide): Embed ABES Logo
+    # 1. Slide 1 (Title Slide): Embed ABES Logo & Author Details
     # -------------------------------------------------------------
     slide1 = prs.slides[0]
     for shape in slide1.shapes:
         if shape.name == 'TextBox 1':
             shape.text_frame.text = ""
+        elif shape.name == 'TextBox 4':
+            shape.text_frame.text = (
+                "Ayush Katiyar | Roll No: 2500320140036\n"
+                "MCA 2nd Year Data Analytics | Mentor: Alpna Lodhi\n"
+                "Live App: https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/\n"
+                "GitHub: https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis"
+            )
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_DARK
     if os.path.exists('ABES_logo.jpg'):
         slide1.shapes.add_picture('ABES_logo.jpg', Inches(0.50), Inches(0.30), width=Inches(1.50))
 
@@ -403,7 +414,7 @@ def build_presentation():
         if shape.name == 'TextBox 3':
             shape.text_frame.text = "16"
         elif shape.name == 'TextBox 15':
-            shape.text_frame.text = "Streamlit dashboard fully operational with canonical 2,400-record Enterprise Dataset (8 divisions, 120 employees, October 2026 full month). 55/55 automated pytest tests passing (100%). In-depth EDA completed with statistical hypothesis tests, full dimensional audit, ML behavioral risk modeling, what-if policy simulation, and financial ROI quantification. Ready for executive & technical presentation."
+            shape.text_frame.text = "Streamlit dashboard fully operational with canonical 2,400-record Enterprise Dataset (8 divisions, 120 employees, October 2026 full month). 58/58 automated pytest tests passing (100%). In-depth EDA completed with statistical hypothesis tests, full dimensional audit, ML behavioral risk modeling, what-if policy simulation, and financial ROI quantification. Ready for executive & technical presentation."
 
     # -------------------------------------------------------------
     # 8. Update Slide 17 (Old Slide 11: Live demo and Q&A)
@@ -414,15 +425,15 @@ def build_presentation():
             shape.text_frame.text = ""
         elif shape.name == 'TextBox 4':
             shape.text_frame.text = (
-                "App: streamlit run app.py (http://localhost:8501)\n"
-                "Code: Modular Python (src/metrics.py, src/validation.py, src/ui.py)\n"
-                "Student: Ayush Katiyar | Roll No 2500320140036\n"
-                "Mentor: Alpna Lodhi\n\n"
+                "Live Cloud App: https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/\n"
+                "GitHub Repository: https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis\n"
+                "Local App Command: streamlit run app.py (http://localhost:8501)\n"
+                "Student: Ayush Katiyar | Roll No: 2500320140036 | Mentor: Alpna Lodhi\n\n"
                 "Thank you · Questions & Discussion"
             )
             for p in shape.text_frame.paragraphs:
                 p.font.name = 'Calibri'
-                p.font.size = Pt(13)
+                p.font.size = Pt(12)
                 p.font.color.rgb = TEXT_DARK
     if os.path.exists('ABES_logo.jpg'):
         slide17.shapes.add_picture('ABES_logo.jpg', Inches(0.50), Inches(0.30), width=Inches(1.50))

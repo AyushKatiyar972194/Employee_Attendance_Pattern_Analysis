@@ -127,15 +127,17 @@ def build_github_report_pdf(output_path: str):
 
     # Title & Metadata
     story.append(Paragraph("GitHub Repository & Source Code Audit Report", title_style))
-    story.append(Paragraph("<b>Project:</b> EAPA-01 · Employee Attendance Pattern Analysis<br/><b>Author / Candidate:</b> Ayush Kumar (ABES Engineering College / HCLTech Career Shaper)<br/><b>Organization:</b> Northstar Technologies (Noida Operations Hub)", subtitle_style))
+    story.append(Paragraph("<b>Project:</b> EAPA-01 · Employee Attendance Pattern Analysis<br/><b>Author / Candidate:</b> Ayush Katiyar (Roll No: 2500320140036, ABES Engineering College / HCLTech Career Shaper)<br/><b>Organization:</b> Northstar Technologies (Noida Operations Hub)", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#2563EB"), spaceBefore=4, spaceAfter=14))
 
     # Repo Metadata Table
     story.append(Paragraph("1. Version Control & Repository Specifications", h2_style))
     meta_data = [
         [Paragraph("<b>Parameter</b>", body_style), Paragraph("<b>Repository Specification</b>", body_style)],
-        [Paragraph("Repository Name", body_style), Paragraph("<code>Employee_Attendance_Pattern_Analysis</code>", code_inline)],
-        [Paragraph("Repository URL", body_style), Paragraph("<code>https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis</code>", code_inline)],
+        [Paragraph("Project Name", body_style), Paragraph("<code>Employee Attendance Pattern Analysis (EAPA-01)</code>", code_inline)],
+        [Paragraph("Author / Candidate", body_style), Paragraph("<b>Ayush Katiyar</b> (Roll No: <code>2500320140036</code>)", body_style)],
+        [Paragraph("Live Cloud Application", body_style), Paragraph("<code>https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/</code>", code_inline)],
+        [Paragraph("GitHub Repository", body_style), Paragraph("<code>https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis</code>", code_inline)],
         [Paragraph("Default Branch", body_style), Paragraph("<code>main</code> (Production Protected)", code_inline)],
         [Paragraph("Primary Language", body_style), Paragraph("Python 3.12 · Streamlit 1.40+ · SQLite 3", body_style)],
         [Paragraph("Testing Framework", body_style), Paragraph("Pytest 8.4.2 (58 Tests, 100% Passing)", body_style)],
@@ -218,13 +220,21 @@ def build_github_report_pdf(output_path: str):
     story.append(Spacer(1, 14))
 
     # How to clone
-    story.append(Paragraph("5. Local Setup & Reproduction Commands", h2_style))
+    story.append(Paragraph("5. Live Cloud Deployment & Setup Commands", h2_style))
+    story.append(Paragraph("<b>Live Streamlit Cloud Deployment:</b> <font color='#2563EB'><u>https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/</u></font><br/>"
+                           "<b>GitHub Repository:</b> <font color='#2563EB'><u>https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis</u></font><br/>"
+                           "<b>Candidate / Lead Developer:</b> Ayush Katiyar (Roll No: 2500320140036)", body_style))
+    story.append(Spacer(1, 8))
     setup_text = (
-        "git clone https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis.git<br/>"
-        "cd Employee_Attendance_Pattern_Analysis<br/>"
-        "python -m venv .venv &amp;&amp; .venv\\Scripts\\activate<br/>"
-        "pip install -r requirements.txt<br/>"
-        "python -m pytest -v<br/>"
+        "# 1. Clone repository\n"
+        "git clone https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis.git\n"
+        "cd Employee_Attendance_Pattern_Analysis\n\n"
+        "# 2. Create and activate virtual environment\n"
+        "python -m venv .venv && .venv\\Scripts\\activate\n"
+        "pip install -r requirements.txt\n\n"
+        "# 3. Execute 58 automated unit & integration tests\n"
+        "python -m pytest -v\n\n"
+        "# 4. Launch local Streamlit portal\n"
         "streamlit run app.py --server.port 8501"
     )
     story.append(Table([[Paragraph(setup_text, code_inline)]], colWidths=[500], style=[

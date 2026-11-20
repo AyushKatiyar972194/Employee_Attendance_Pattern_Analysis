@@ -1,12 +1,26 @@
 # 🏢 Workforce Operations Intelligence & Attendance Pattern Analytics
 ### Enterprise-Grade Workforce Analytics, Relational Modeling & BI Decision Support Platform
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/)
 ![Python 3.12](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B?logo=streamlit)
 ![SQLite](https://img.shields.io/badge/SQLite-3NF_Relational-003B57?logo=sqlite)
 ![Tests](https://img.shields.io/badge/pytest-58%2F58_Passed_(100%25)-brightgreen?logo=pytest)
 ![Architecture](https://img.shields.io/badge/Architecture-ETL_%2B_3NF_%2B_BI-purple)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+### 🌐 Quick Links & Project Identity
+
+| Key Attribute | Verified Reference |
+| :--- | :--- |
+| **Live Web Application** | **[Launch Live Streamlit App 🚀](https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/)** |
+| **GitHub Repository** | **[AyushKatiyar972194 / Employee_Attendance_Pattern_Analysis](https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis)** |
+| **Lead Developer / Author** | **Ayush Katiyar** (Roll No: `2500320140036`) |
+| **Academic Programme** | MCA 2nd Year Data Analytics Specialisation — **ABES Engineering College** |
+| **Corporate Training** | **HCLTech Career Shaper** Capstone Project (`EAPA-01`) |
+| **Faculty Mentor** | **Alpna Lodhi** |
 
 ---
 
