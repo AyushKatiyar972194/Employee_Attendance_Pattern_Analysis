@@ -1,0 +1,9 @@
+﻿department_id,department_name,location,is_active,created_at
+1,Engineering,Bengaluru Tech Hub,1,2026-11-19 10:00:00
+2,Human Resources,Noida Sector 62 HQ,1,2026-11-19 10:00:00
+3,Finance,Noida Sector 16,1,2026-11-19 10:00:00
+4,Sales,Gurugram CyberCity,1,2026-11-19 10:00:00
+5,Customer Support,Pune Hinjewadi,1,2026-11-19 10:00:00
+6,Product Management,Bengaluru Tech Hub,1,2026-11-19 10:00:00
+7,Quality Assurance,Hyderabad HITEC City,1,2026-11-19 10:00:00
+8,Operations,Delhi Okhla,1,2026-11-19 10:00:00

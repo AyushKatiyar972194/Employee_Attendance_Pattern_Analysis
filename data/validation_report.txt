@@ -1,0 +1,40 @@
+SYNTHETIC DATA VALIDATION REPORT
+Random seed: 42
+Observation dates: 2026-10-01, 2026-10-05, 2026-10-09, 2026-10-13, 2026-10-19, 2026-10-23
+
+ROW COUNTS
+- departments: 5
+- employees: 50
+- attendance_statuses: 4
+- work_calendar: 150
+- attendance_records: 300
+
+Foreign key check violations: 0
+Duplicate candidates rejected by UNIQUE constraint: 3
+
+CHECKS
+- PASS | department_count | observed=5 | expected=5
+- PASS | employee_count | observed=50 | expected=50
+- PASS | calendar_rows | observed=150 | expected=150
+- PASS | attendance_rows | observed=300 | expected=150-300
+- PASS | grace_minutes_range | observed=0 | expected=0
+- PASS | status_allowed_values | observed=0 | expected=0
+- PASS | invalid_clock_shape | observed=0 | expected=0
+- PASS | duplicate_employee_date_keys | observed=0 | expected=0
+- PASS | foreign_key_violations | observed=0 | expected=0
+- PASS | joined_view_columns | observed=34 | expected=30-40
+- PASS | duplicate_candidates_rejected | observed=3 | expected=3
+- PASS | missing_checkout_rate | observed=7 | expected=2-3% of all records
+
+PATTERNS TO FIND
+- PAT-01: Customer Support has a higher late-arrival probability than most other departments.
+- PAT-02: Monday has a slightly higher absence probability than other weekdays.
+- PAT-03: Human Resources has relatively consistent and punctual start times.
+- PAT-04: A small number of unusually long recorded durations and very late arrivals appear as outliers.
+- PAT-05: Approved leave is a separate category and should not be combined with absence.
+
+QUALITY ISSUES
+- DQ-01: Seven missing check_out_time values (nullable field), approximately 2.33% of 300 fact rows. Handling: Retain as missing; exclude from duration statistics and flag for review.
+- DQ-02: Three duplicate employee/date candidate rows were attempted during generation. Handling: Rejected by UNIQUE(employee_id, attendance_date); not inserted into canonical CSV/DB tables.
+- DQ-03: Two extreme late-arrival delays (185 minutes). Handling: Keep as valid-shaped but suspicious observations; flag and investigate, do not silently delete.
+- DQ-04: Two unusually long elapsed recorded durations (840 minutes). Handling: Keep as outliers for data-quality analysis; confirm whether extended work or recording error.

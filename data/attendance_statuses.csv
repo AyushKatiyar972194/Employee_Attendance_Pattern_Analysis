@@ -1,0 +1,5 @@
+﻿status_code,status_name,counts_as_present,counts_as_absence,is_leave,is_active
+PRESENT,Present,1,0,0,1
+ABSENT,Absent,0,1,0,1
+APPROVED_LEAVE,Approved Leave,0,0,1,1
+HOLIDAY,Holiday,0,0,0,1
