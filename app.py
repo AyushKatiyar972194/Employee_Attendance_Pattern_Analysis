@@ -720,7 +720,7 @@ def render_main():
                 <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 0.85rem; padding: 1.15rem; min-height: 110px;">
                     <div style="font-weight: 700; font-size: 1rem; color: #6D28D9;">🔍 Module 4: Data Quality & Database Operations</div>
                     <div style="color: #64748B; font-size: 0.84rem; margin-top: 0.35rem; line-height: 1.45;">
-                        Verify 5 automated data health checks, review 51 missing clock-outs, run live SQL queries against SQLite, and ingest new CSV punch files.
+                        Verify 5 automated data health checks, review 14 missing clock-outs, run live SQL queries against SQLite, and ingest new CSV punch files.
                     </div>
                 </div>
                 """,
@@ -778,10 +778,10 @@ def render_main():
                 st.markdown(
                     """
                     ##### 🛡️ Enterprise Data Quality & Resilience
-                    * **Missing Punch Quarantining:** 51 shifts (~2.3%) lack check-out timestamps due to forgotten badge swipes. They are isolated from duration metrics to prevent skewing work hours.
+                    * **Missing Punch Quarantining:** 14 shifts (~0.58%) lack check-out timestamps due to forgotten badge swipes. They are isolated from duration metrics to prevent skewing work hours.
                     * **Grace Window Precision:** Scheduled start 09:00 with 10-minute tolerance. Check-ins at ≤09:10:00 are punctual; check-ins at ≥09:10:01 are flagged late.
                     * **Statistical Anomaly Detection:** Non-parametric IQR boundary (Q3 + 1.5×IQR) automatically flags significant workforce dips (e.g., Oct 1st pre-holiday drop).
-                    * **CI/CD Quality Gate:** **55 automated pytest test cases** covering boundary conditions, empty datasets, inverted dates, predictive risk scoring, policy simulations, and UI render stability.
+                    * **CI/CD Quality Gate:** **58 automated pytest test cases** covering boundary conditions, empty datasets, inverted dates, predictive risk scoring, policy simulations, and UI render stability.
                     """
                 )
 
