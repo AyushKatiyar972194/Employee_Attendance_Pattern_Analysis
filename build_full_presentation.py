@@ -158,6 +158,63 @@ def build_presentation():
             s.top = Inches(4.50)
 
     # -------------------------------------------------------------
+    # 1c. Slide 5: Update Data & Preparation metrics to 2,400 Enterprise Dataset
+    # -------------------------------------------------------------
+    slide5 = prs.slides[4]
+    for s in slide5.shapes:
+        if s.name == 'TextBox 4':
+            s.text_frame.text = "2,400"
+            p = s.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(28)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif s.name == 'TextBox 5':
+            s.text_frame.text = "attendance rows"
+        elif s.name == 'TextBox 6':
+            s.text_frame.text = "34"
+        elif s.name == 'TextBox 7':
+            s.text_frame.text = "view features"
+        elif s.name == 'TextBox 8':
+            s.text_frame.text = "120"
+            p = s.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(28)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif s.name == 'TextBox 9':
+            s.text_frame.text = "employees (8 depts)"
+        elif s.name == 'TextBox 10':
+            s.text_frame.text = "14"
+            p = s.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(28)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif s.name == 'TextBox 11':
+            s.text_frame.text = "missing check-outs"
+        elif s.name == 'TextBox 14':
+            s.text_frame.text = (
+                "Canonical enterprise dataset for Northstar Technologies. "
+                "2,400 attendance facts across 120 full-time employees and 8 operating departments "
+                "over the entire month of October 2026 (22 working days observed)."
+            )
+            for p in s.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_BODY
+        elif s.name == 'TextBox 17':
+            s.text_frame.text = (
+                "• 14 missing check-outs isolated as completeness quality warnings without data drop.\n"
+                "• 0 duplicate employee-dates (100% uniqueness verified).\n"
+                "• 0 foreign-key violations across 3NF relational tables."
+            )
+            for p in s.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_BODY
+
+    # -------------------------------------------------------------
     # 2. Slide 7: Transform in-place into Executive Dashboard (UI-01)
     # -------------------------------------------------------------
     slide7 = prs.slides[6]
@@ -350,8 +407,8 @@ def build_presentation():
     add_card(s13, Inches(6.00), Inches(3.78), Inches(3.50), Inches(1.22),
              "Pipeline Execution Logging",
              ["• SQLite table 'pipeline_runs' records every data load",
-              "• Logs: Run ID, start/end timestamps, accepted rows (300),",
-              "  rejected rows (0), and validation warnings (7)"],
+              "• Logs: Run ID, start/end timestamps, accepted rows (2,400),",
+              "  rejected rows (0), and validation warnings (14)"],
              badge_text="!", badge_color=GREEN)
     new_ids.append(prs.slides._sldIdLst[-1])
 
@@ -371,6 +428,60 @@ def build_presentation():
     for shape in slide14.shapes:
         if shape.name == 'TextBox 3':
             shape.text_frame.text = "14"
+        elif shape.name == 'TextBox 5':
+            shape.text_frame.text = "2,400"
+            p = shape.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(36)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif shape.name == 'TextBox 6':
+            shape.text_frame.text = "Canonical enterprise attendance facts modeled across 8 departments and 120 employees."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(13)
+                p.font.bold = True
+        elif shape.name == 'TextBox 7':
+            shape.text_frame.text = "Evidence: attendance_records table count = 2,400 (October 2026 full month)."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+        elif shape.name == 'TextBox 9':
+            shape.text_frame.text = "14"
+            p = shape.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(36)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif shape.name == 'TextBox 10':
+            shape.text_frame.text = "Records missing clock-out timestamps isolated from duration averages."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(13)
+                p.font.bold = True
+        elif shape.name == 'TextBox 11':
+            shape.text_frame.text = "Evidence: 14 nullable check-out values; valid duration calculated on N = 2,288 shifts."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+        elif shape.name == 'TextBox 13':
+            shape.text_frame.text = "0"
+            p = shape.text_frame.paragraphs[0]
+            p.font.name = 'Cambria'
+            p.font.size = Pt(36)
+            p.font.bold = True
+            p.font.color.rgb = CRIMSON
+        elif shape.name == 'TextBox 14':
+            shape.text_frame.text = "Database referential integrity passed all automated validation checks."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(13)
+                p.font.bold = True
+        elif shape.name == 'TextBox 15':
+            shape.text_frame.text = "Evidence: SQLite foreign_key_check returned 0 violations."
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
 
     # -------------------------------------------------------------
     # 6. Update Slide 15 (Old Slide 9: Testing and validation)
@@ -380,31 +491,41 @@ def build_presentation():
         if shape.name == 'TextBox 3':
             shape.text_frame.text = "15"
         elif shape.name == 'TextBox 4':
-            shape.text_frame.text = "55 / 55"
+            shape.text_frame.text = "58 / 58"
             p = shape.text_frame.paragraphs[0]
             p.font.name = 'Calibri'
             p.font.size = Pt(36)
             p.font.bold = True
             p.font.color.rgb = GREEN
         elif shape.name == 'TextBox 5':
-            shape.text_frame.text = "Test cases passed (100%)\npytest: 55 passed in ~9s\nenterprise verified"
+            shape.text_frame.text = "Test cases passed (100%)\npytest: 58 passed in ~10.8s\nenterprise verified"
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
         elif shape.has_table:
             table = shape.table
+            table.columns[0].width = Inches(2.10)
+            table.columns[1].width = Inches(3.00)
+            table.columns[2].width = Inches(1.00)
             rows_data = [
                 ("test_analysis.py", "Weighted attendance rate, grace boundary, punctuality rankings", "15 Passed"),
-                ("test_data & pipeline", "SQLite 3NF schema, 2,400 facts, append/replace ingestion, CSV export", "18 Passed"),
+                ("test_data.py", "SQLite 3NF schema, 2,400 facts, uniqueness, foreign keys", "16 Passed"),
                 ("test_error_resilience.py", "Zero-crash boundaries, NaN handling, donut charts, param aliases", "10 Passed"),
                 ("test_app.py (AppTest)", "Streamlit AppTest all 5 pages & main entry point validation", "7 Passed"),
-                ("test_predictive.py", "ML behavioral risk scoring, what-if policy simulation, financial ROI", "5 Passed"),
+                ("test_pipeline & predictive", "6-dimension scorecard, ML risk scoring, policy simulation", "10 Passed"),
             ]
             for row_idx, (t_name, t_chk, t_res) in enumerate(rows_data):
                 if row_idx + 1 < len(table.rows):
                     table.cell(row_idx + 1, 0).text = t_name
                     table.cell(row_idx + 1, 1).text = t_chk
                     table.cell(row_idx + 1, 2).text = t_res
-                    p = table.cell(row_idx + 1, 2).text_frame.paragraphs[0]
-                    p.font.bold = True
-                    p.font.color.rgb = GREEN
+                    for c in range(3):
+                        p = table.cell(row_idx + 1, c).text_frame.paragraphs[0]
+                        p.font.name = 'Calibri'
+                        p.font.size = Pt(10)
+                    p_res = table.cell(row_idx + 1, 2).text_frame.paragraphs[0]
+                    p_res.font.bold = True
+                    p_res.font.color.rgb = GREEN
 
     # -------------------------------------------------------------
     # 7. Update Slide 16 (Old Slide 10: Recommendations & Next Steps)
@@ -413,8 +534,33 @@ def build_presentation():
     for shape in slide16.shapes:
         if shape.name == 'TextBox 3':
             shape.text_frame.text = "16"
+        elif shape.name == 'TextBox 7':
+            shape.text_frame.text = (
+                "Deploy data-driven policy update: extend grace threshold to 15 min to recover "
+                "232 transit-delayed shifts ($42k ROI). Target chronic tardiness (EMP0066) with individual supervisor coaching."
+            )
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_BODY
+        elif shape.name == 'TextBox 11':
+            shape.text_frame.text = (
+                "Single-facility observation window (October 2026); turnstiles record punch times without "
+                "meal break tracking (elapsed duration vs. net working hours). Live deployment & 58 tests fully verified."
+            )
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_BODY
         elif shape.name == 'TextBox 15':
-            shape.text_frame.text = "Streamlit dashboard fully operational with canonical 2,400-record Enterprise Dataset (8 divisions, 120 employees, October 2026 full month). 58/58 automated pytest tests passing (100%). In-depth EDA completed with statistical hypothesis tests, full dimensional audit, ML behavioral risk modeling, what-if policy simulation, and financial ROI quantification. Ready for executive & technical presentation."
+            shape.text_frame.text = (
+                "Streamlit portal fully operational on Community Cloud with canonical 2,400-record Enterprise Dataset "
+                "(8 divisions, 120 employees, October 2026). All 58 tests passing (100%). Ready for executive presentation."
+            )
+            for p in shape.text_frame.paragraphs:
+                p.font.name = 'Calibri'
+                p.font.size = Pt(11)
+                p.font.color.rgb = TEXT_BODY
 
     # -------------------------------------------------------------
     # 8. Update Slide 17 (Old Slide 11: Live demo and Q&A)
