@@ -23,14 +23,14 @@
 > - Architected a 3rd Normal Form (3NF) relational data pipeline in **SQLite** with foreign-key enforcement across 5 entity tables (`employees`, `departments`, `attendance_records`, `work_calendar`, `attendance_statuses`).
 > - Engineered a 37-attribute pre-computed analytical SQL view (`vw_attendance_analysis`) with sub-second query performance and an interactive read-only SQL studio for ad-hoc business intelligence.
 > - Built a multi-mode batch CSV ingestion engine with automated schema verification, foreign-key cross-validation, and dual modes (Append vs. Replace All) with atomic 1-click canonical baseline restore.
-> - Implemented an automated test suite of **55 unit, data-integrity, and error-resilience tests** using `pytest` and `streamlit.testing.v1.AppTest`, achieving 100% test pass rate in CI/CD runs.
+> - Implemented an automated test suite of **58 unit, data-integrity, and error-resilience tests** using `pytest` and `streamlit.testing.v1.AppTest`, achieving 100% test pass rate in CI/CD runs.
 
 ### Option C: For Software Engineer / Full-Stack Roles
 > **Full-Stack Python & Data Developer | Enterprise Attendance Operations Portal**
 > - Developed an enterprise workforce monitoring portal using **Python 3.12, Streamlit, Pandas, and Plotly**, featuring responsive Tailwind-inspired UI design tokens and zero-iframe native embedding.
 > - Implemented a global exception isolation layer (`safe_page_render`) preventing application crashes on corrupted user inputs, invalid date ranges, or unexpected database states.
 > - Designed sub-second grace-period boundary logic (09:10:00 cutoff) with microsecond precision, eliminating false-positive lateness classifications.
-> - Maintained 100% green test suite across 55 automated test cases, validating UI latency (<3s initial render), parameter aliases, and null-safety boundaries.
+> - Maintained 100% green test suite across 58 automated test cases, validating UI latency (<3s initial render), parameter aliases, and null-safety boundaries.
 
 ---
 
@@ -50,9 +50,9 @@
 
 *On top of the relational model, I engineered a 37-column denormalized analytical view (`vw_attendance_analysis`). This view dynamically computes attendance fulfillment and arrival variances in real-time as new records are inserted.*
 
-*For data quality, I designed an automated 5-dimension audit engine: Completeness, Uniqueness, Validity, Consistency, and Referential Integrity. Crucially, I isolated 51 shifts where employees forgot to clock out—quarantining them from duration averages so they wouldn't distort shift length calculations.*
+*For data quality, I designed an automated 5-dimension audit engine: Completeness, Uniqueness, Validity, Consistency, and Referential Integrity. Crucially, I isolated 14 shifts where employees forgot to clock out—quarantining them from duration averages so they wouldn't distort shift length calculations.*
 
-*The entire codebase is validated by **55 automated unit and resilience tests** in `pytest`, including AppTest smoke tests ensuring initial page renders occur under 3 seconds."*
+*The entire codebase is validated by **58 automated unit and resilience tests** in `pytest`, including AppTest smoke tests ensuring initial page renders occur under 3 seconds."*
 
 ### 3. The Analytical Finding (The "Aha!" Discovery) (60 seconds)
 *"When I ran the analysis, the data revealed a fascinating insight:*
@@ -66,7 +66,7 @@
 ### 4. The Business Impact & Action Plan (60 seconds)
 *"Instead of recommending punitive pay deductions—which harms employee morale—I formulated a 3-part strategic recommendation:*
 1. *Stagger Customer Support's scheduled start from 09:00 to 09:30 AM, which immediately resolves 70% of commute infractions.*
-2. *Route the 51 missing clock-out records to an interactive supervisor regularization portal for 8-hour approval.*
+2. *Route the 14 missing clock-out records to an interactive supervisor regularization portal for 8-hour approval.*
 3. *Publicly recognize the 8 employees who achieved a 100% perfect on-time record throughout the entire month.*
 
 *The platform also includes an interactive SQL studio and batch CSV ingestion pipeline, making it an ongoing enterprise tool rather than a static one-off report."*
@@ -79,9 +79,9 @@
 **Answer:**  
 *"A flat CSV creates data redundancy, risk of update anomalies, and no foreign-key enforcement. In a real company, employees change departments, shift schedules vary by office, and holidays change every year. By structuring the database in 3NF with foreign keys connecting `employees`, `departments`, and `work_calendar`, we ensure referential integrity. When new records arrive, our SQL view (`vw_attendance_analysis`) recomputes metrics automatically without code modifications."*
 
-### Q2: *"How did you handle the 51 missing check-out records?"*
+### Q2: *"How did you handle the 14 missing check-out records?"*
 **Answer:**  
-*"Missing check-outs represent forgotten badge swipes (about 2.3% of shifts). If you impute them with 17:00, you introduce fabricated data. If you calculate `co_time - ci_time`, you get `NaN` or negative values. I handled this defensively: in the metric layer (`src/metrics.py`), missing check-outs are quarantined to `NaN` for duration calculations while retaining the shift as `PRESENT` for attendance fulfillment. In the UI, they are flagged in a dedicated regularization queue for supervisor sign-off."*
+*"Missing check-outs represent forgotten badge swipes (about 0.58% of shifts). If you impute them with 17:00, you introduce fabricated data. If you calculate `co_time - ci_time`, you get `NaN` or negative values. I handled this defensively: in the metric layer (`src/metrics.py`), missing check-outs are quarantined to `NaN` for duration calculations while retaining the shift as `PRESENT` for attendance fulfillment. In the UI, they are flagged in a dedicated regularization queue for supervisor sign-off."*
 
 ### Q3: *"How does your grace period boundary work, and how did you verify it?"*
 **Answer:**  
@@ -101,7 +101,7 @@
 
 ### Q7: *"Tell me about your automated testing approach."*
 **Answer:**  
-*"We have 55 automated tests in `pytest` categorized into 5 test suites:
+*"We have 58 automated tests in `pytest` categorized into 5 test suites:
 1. `test_data.py`: Schema validation, primary/foreign key uniqueness, zero duplicates, atomic commit & reset.
 2. `test_analysis.py`: Mathematical correctness of weighted rates, grace boundaries, and duration calculations.
 3. `test_error_resilience.py`: Defensive checks for empty inputs, NaN values, parameter aliases, and inverted date ranges.
@@ -133,11 +133,11 @@ When sharing your screen during an interview:
 
 1. **Start on Home (`app.py`):**
    - Point to the **Executive Flash Briefing** banner (summarizing the entire workforce health in 20 seconds).
-   - Point to the **4 KPI Cards** (120 Staff, 95.9% Attendance, 84.0% On-Time, 51 Missing Punches).
+   - Point to the **4 KPI Cards** (120 Staff, 95.9% Attendance, 84.0% On-Time, 14 Missing Punches).
    - Click on **Tab 1 (Department Matrix):** Show the letter-graded department scorecard and explain the Customer Support commuter paradox.
    - Click on **Tab 2 (Employee 360° Dossier):** Click the preset `EMP0066 (Support)` button, show the chronological shift log, and expand the **Ready-to-Use 1-on-1 Manager Conversation Script**.
    - Click on **Tab 3 (Policy Simulator):** Slide the grace period to 15 minutes to show +8.1% punctuality gain and ₹87,880 in projected cost recovery.
-   - Click on **Tab 4 (Tech Dossier):** Open the **Engineering Architecture expander** to show SQLite 3NF relational modeling and 55 pytest tests.
+   - Click on **Tab 4 (Tech Dossier):** Open the **Engineering Architecture expander** to show SQLite 3NF relational modeling and 58 pytest tests.
 
 2. **Navigate to Page 2 (`2_Department_Analysis.py`):**
    - Highlight the **10-Second Executive Takeaway** banner.
@@ -160,6 +160,6 @@ When sharing your screen during an interview:
 ## 🏆 Summary: What Sets This Project Apart
 - **Not a toy tutorial:** Features 3NF SQLite database, foreign keys, and analytical views.
 - **Not a generic dashboard:** Solves a genuine business problem with quantifiable recommendations.
-- **Enterprise resilience:** 55 automated unit tests, zero-crash error isolation, and sub-second precision.
+- **Enterprise resilience:** 58 automated unit tests, zero-crash error isolation, and sub-second precision.
 - **Predictive & prescriptive depth:** Machine learning risk scoring, interactive "what-if" policy simulation, and financial ROI quantification.
 - **Production design:** Clean executive theme, zero developer clutter, and 1-click CSV exports.
