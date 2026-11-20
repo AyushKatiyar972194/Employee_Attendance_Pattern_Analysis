@@ -61,7 +61,7 @@ flowchart TD
     end
 
     subgraph Quality Gate ["4. CI/CD & Automated Verification"]
-        T["pytest Test Suite<br/>(55/55 Tests Passing · 100% Green)"]
+        T["pytest Test Suite<br/>(58/58 Tests Passing · 100% Green)"]
         H -.-> T
         P1 -.-> T
         P2 -.-> T
@@ -133,7 +133,7 @@ The platform is backed by a production relational SQLite database (`data/app.db`
 
 ---
 
-## 🧪 Comprehensive Automated Test Suite (47/47 Passing)
+## 🧪 Comprehensive Automated Test Suite (58/58 Passing)
 
 The project includes an enterprise test suite verifying mathematical correctness, schema constraints, and error boundaries:
 
