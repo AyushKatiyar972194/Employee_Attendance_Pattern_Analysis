@@ -1,4 +1,4 @@
-"""Read-only SQLite access for EAPA-01.
+"""Read-only SQLite access for P070.
 
 Provides a safe connection helper with foreign keys enabled
 and read-only pragmas for the synthetic dataset.

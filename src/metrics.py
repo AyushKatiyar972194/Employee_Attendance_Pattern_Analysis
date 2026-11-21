@@ -1,4 +1,4 @@
-"""Centralised Metric Calculation Layer & Business Metric Catalogue for EAPA-01.
+"""Centralised Metric Calculation Layer & Business Metric Catalogue for P070.
 
 This module provides authoritative, mathematically reconciled functions for all
 KPIs across Northstar Technologies Workforce Analytics dashboards.

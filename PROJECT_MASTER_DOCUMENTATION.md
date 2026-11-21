@@ -1,4 +1,4 @@
-# Employee Attendance Pattern Analysis (EAPA-01)
+# Employee Attendance Pattern Analysis (P070)
 ## Master Project Documentation: Purpose, Architecture, Methodology & Operational Impact
 
 ---
@@ -7,11 +7,11 @@
 
 | Attribute | Specification |
 | :--- | :--- |
-| **Project Code** | `EAPA-01` |
+| **Project Code / ID** | `P070` |
 | **Project Title** | Enterprise Workforce Attendance & Punctuality Intelligence Platform |
-| **Author / Candidate** | **Ayush Katiyar** (Roll No: `2500320140036`) |
-| **Institution & Batch** | ABES Engineering College · MCA 2nd Year Data Analytics (HCLTech Career Shaper) |
-| **Faculty Mentor** | Alpna Lodhi |
+| **Author / Candidate** | **Ayush Katiyar** (University Roll No: `2500320140036`) |
+| **Batch ID** | **ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01** (ABES Engineering College) |
+| **Project Mentor** | **Dinesh Sereno** |
 | **Live Cloud Application** | [employeeattendancepatternanalysis.streamlit.app](https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/) |
 | **GitHub Repository** | [github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis](https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis) |
 | **Client / Context** | Northstar Technologies (Noida Regional Operations & Distributed Engineering Hub) |

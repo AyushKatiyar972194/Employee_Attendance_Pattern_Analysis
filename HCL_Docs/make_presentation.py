@@ -1,4 +1,4 @@
-"""Build the enhanced, professional EAPA-01 Presentation with cropped screenshots."""
+"""Build the enhanced, professional P070 Presentation with cropped screenshots."""
 import os
 import pptx
 from pptx.util import Inches, Pt
@@ -8,7 +8,7 @@ from pptx.enum.shapes import MSO_SHAPE
 
 def create_presentation():
     # Load original presentation to preserve exact slide layouts and design assets
-    prs = pptx.Presentation('EAPA-01_Presentation_original.pptx')
+    prs = pptx.Presentation('P070_Presentation_original.pptx')
     blank_layout = prs.slide_layouts[6]
     
     # Palette definitions
@@ -41,7 +41,7 @@ def create_presentation():
         tx_ftr = slide.shapes.add_textbox(Inches(0.50), Inches(5.20), Inches(7.50), Inches(0.30))
         tf_f = tx_ftr.text_frame
         p_f = tf_f.paragraphs[0]
-        p_f.text = "HCLTech Career Shaper ABES Engineering College | EAPA-01 - Employee Attendance Pattern Analysis"
+        p_f.text = "HCLTech Career Shaper ABES Engineering College | P070 - Employee Attendance Pattern Analysis"
         p_f.font.name = 'Calibri'
         p_f.font.size = Pt(9)
         p_f.font.color.rgb = TEXT_MUTED

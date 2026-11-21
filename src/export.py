@@ -1,4 +1,4 @@
-"""CSV export helper for EAPA-01.
+"""CSV export helper for P070.
 
 Provides filtered DataFrame-to-CSV conversion with UTF-8 headers.
 """

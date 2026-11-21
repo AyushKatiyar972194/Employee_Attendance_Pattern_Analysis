@@ -17,16 +17,18 @@
 | :--- | :--- |
 | **Live Web Application** | **[Launch Live Streamlit App 🚀](https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/)** |
 | **GitHub Repository** | **[AyushKatiyar972194 / Employee_Attendance_Pattern_Analysis](https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis)** |
-| **Lead Developer / Author** | **Ayush Katiyar** (Roll No: `2500320140036`) |
+| **Lead Developer / Author** | **Ayush Katiyar** (University Roll No: `2500320140036`) |
+| **Project ID** | **P070** |
+| **Batch ID** | **ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01** |
 | **Academic Programme** | MCA 2nd Year Data Analytics Specialisation — **ABES Engineering College** |
-| **Corporate Training** | **HCLTech Career Shaper** Capstone Project (`EAPA-01`) |
-| **Faculty Mentor** | **Alpna Lodhi** |
+| **Corporate Training** | **HCLTech Career Shaper** Capstone Project (`P070`) |
+| **Project Mentor** | **Dinesh Sereno** |
 
 ---
 
 ## 📌 Executive Overview
 
-The **Workforce Attendance Pattern Analysis Platform (`EAPA-01`)** is an enterprise data engineering and business intelligence application developed for **Northstar Technologies** (Noida Operations / Multi-Hub Workforce).
+The **Workforce Attendance Pattern Analysis Platform (`P070`)** is an enterprise data engineering and business intelligence application developed for **Northstar Technologies** (Noida Operations / Multi-Hub Workforce).
 
 While executive reporting showed overall workforce attendance meeting targets on paper (95.9% vs. 95.0% SLA), department heads faced severe morning SLA shortfalls, shift handover friction, and payroll disputes. This platform ingests **2,400+ biometric punch facts** across **120 employees** and **8 operational departments**, transforming raw turnstile data into actionable operational decisions.
 

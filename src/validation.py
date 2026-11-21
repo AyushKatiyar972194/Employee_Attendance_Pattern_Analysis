@@ -1,4 +1,4 @@
-"""Data validation, quality scorecard, and pipeline auditing for EAPA-01.
+"""Data validation, quality scorecard, and pipeline auditing for P070.
 
 Provides formal quality dimension checks:
 - Completeness

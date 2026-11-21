@@ -1,4 +1,4 @@
-"""Project-wide configuration constants for EAPA-01."""
+"""Project-wide configuration constants for P070."""
 from __future__ import annotations
 
 from pathlib import Path

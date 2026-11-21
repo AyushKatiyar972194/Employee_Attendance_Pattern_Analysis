@@ -1,4 +1,4 @@
-"""Data cleaning for EAPA-01 attendance data.
+"""Data cleaning for P070 attendance data.
 
 clean_attendance_data(df) returns a cleaned copy:
   - Removes rows with invalid status codes

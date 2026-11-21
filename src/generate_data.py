@@ -1,4 +1,4 @@
-"""Canonical dataset generator for Northstar Technologies Workforce Attendance Analytics (EAPA-01).
+"""Canonical dataset generator for Northstar Technologies Workforce Attendance Analytics (P070).
 
 Generates the complete authoritative enterprise dataset:
 - 8 diverse business divisions (Engineering, HR, Finance, Sales, Customer Support, Product, QA, Operations)

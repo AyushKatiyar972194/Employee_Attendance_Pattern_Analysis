@@ -1,8 +1,9 @@
 # BUILD PLAN — Employee Attendance Pattern Analysis
 
-**Project:** EAPA-01  
-**Owner:** Ayush Katiyar (MCA, ABES Engineering College)  
-**Mentor:** Alpna Lodhi  
+**Project ID:** P070  
+**Owner / Learner:** Ayush Katiyar (University Roll No: 2500320140036 · ABES Engineering College)  
+**Batch ID:** ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01  
+**Project Mentor:** Dinesh Sereno  
 **Version:** Step 14 baseline; execute one task at a time in Step 15.  
 **Status:** Plan only; no BUILD tasks are claimed completed.
 
@@ -18,7 +19,7 @@
 
 ## 1. Project summary (10 lines)
 
-1. Project EAPA-01 is an MCA Data Analysis application for a fictional organisation, Northstar Technologies, Noida.
+1. Project P070 is an MCA Data Analysis application for a fictional organisation, Northstar Technologies, Noida.
 2. It examines employee attendance patterns using synthetic data only.
 3. The database is SQLite at data/app.db and contains five related tables.
 4. The sample includes 50 employees, five departments and 300 attendance facts.
@@ -126,7 +127,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-01 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Create Python 3.12 project setup, preserve existing synthetic data and existing UI/test source. Add compatible pinned requirements for Streamlit, pandas, NumPy, SciPy, statsmodels, Plotly, pytest and openpyxl. Preserve the existing Streamlit theme, make imports work from project root, add safe .gitignore, and document reproducible installation. Do not create application logic or change test expectations yet. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-01 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Create Python 3.12 project setup, preserve existing synthetic data and existing UI/test source. Add compatible pinned requirements for Streamlit, pandas, NumPy, SciPy, statsmodels, Plotly, pytest and openpyxl. Preserve the existing Streamlit theme, make imports work from project root, add safe .gitignore, and document reproducible installation. Do not create application logic or change test expectations yet. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pip install -r requirements.txt; python -m pip check; python -m compileall src tests`  
 **Tests that must pass / be verified:** Environment resolves, compileall succeeds; no functional tests expected to pass yet.
@@ -139,7 +140,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-02 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement read-only SQLite access to data/app.db and load_attendance_data(db_path) returning a pandas DataFrame from vw_attendance_analysis. Keep schema field names unchanged, preserve missing values, use safe SQL and enable foreign keys per connection. Verify 300 rows and 34 view columns. Add an explicit available-observation-date helper. Do not create attendance facts for missing dates. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-02 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement read-only SQLite access to data/app.db and load_attendance_data(db_path) returning a pandas DataFrame from vw_attendance_analysis. Keep schema field names unchanged, preserve missing values, use safe SQL and enable foreign keys per connection. Verify 300 rows and 34 view columns. Add an explicit available-observation-date helper. Do not create attendance facts for missing dates. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_data.py -k "database_file or data_loads or row_counts or joined_view or primary_keys or composite_calendar or foreign_keys"`  
 **Tests that must pass / be verified:** TC-T-01–TC-T-05; data-loading and schema pytest checks.
@@ -152,7 +153,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-03 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement validate_attendance_data(df) with missing_count, duplicate_count, invalid_count and useful issue breakdowns; implement clean_attendance_data(df). Check key/date/status/time consistency; preserve missing check-outs as missing, do not fabricate check-outs or absences. Keep valid source rows; document invalid-row treatment. Make validation independent of UI. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-03 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement validate_attendance_data(df) with missing_count, duplicate_count, invalid_count and useful issue breakdowns; implement clean_attendance_data(df). Check key/date/status/time consistency; preserve missing check-outs as missing, do not fabricate check-outs or absences. Keep valid source rows; document invalid-row treatment. Make validation independent of UI. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_data.py`  
 **Tests that must pass / be verified:** TC-T-06, TC-T-07; data suite including missing check-outs and duplicate checks.
@@ -165,7 +166,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-04 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement attendance_rate, daily_status_counts, department_attendance_rates, record/date coverage helpers, and expected employee-working-day logic. Use observed eligible employee-days and the calendar; do not infer absences from unobserved dates. Respect approved leave rules in BRD and document whether it is excluded from denominator. Return NA/None for zero denominators (align any existing test expecting zero with documented rule). Keep outputs deterministic and testable. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-04 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement attendance_rate, daily_status_counts, department_attendance_rates, record/date coverage helpers, and expected employee-working-day logic. Use observed eligible employee-days and the calendar; do not infer absences from unobserved dates. Respect approved leave rules in BRD and document whether it is excluded from denominator. Return NA/None for zero denominators (align any existing test expecting zero with documented rule). Keep outputs deterministic and testable. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_analysis.py -k "attendance_rate or daily_status or department or empty"`  
 **Tests that must pass / be verified:** TC-T-08–TC-T-10, TC-T-15; TC-F-01–TC-F-06, TC-F-25 when UI exists.
@@ -178,7 +179,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-05 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Add late_arrival_metrics, elapsed_duration_minutes, late grouping by department/month, and reusable date/department filter function. Lateness is strictly after scheduled start + grace. Duration is elapsed check-out minus check-in, not net paid work. Invalid or missing time pairs yield missing durations. Check month boundaries and empty selections. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-05 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Add late_arrival_metrics, elapsed_duration_minutes, late grouping by department/month, and reusable date/department filter function. Lateness is strictly after scheduled start + grace. Duration is elapsed check-out minus check-in, not net paid work. Invalid or missing time pairs yield missing durations. Check month boundaries and empty selections. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_analysis.py -k "late or elapsed"`  
 **Tests that must pass / be verified:** TC-T-11, TC-T-12, TC-T-19; TC-F-08–TC-F-10, TC-F-23–TC-F-24 after UI.
@@ -191,7 +192,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-06 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement weekday_attendance_summary and flag_high_absence_dates using a clearly documented Q3 + 1.5×IQR threshold. Handle small/empty samples without misleading significance claims. Expose count, denominator and flag status. Use observed dates only. No forecasting or employee-level disciplinary scoring. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-06 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement weekday_attendance_summary and flag_high_absence_dates using a clearly documented Q3 + 1.5×IQR threshold. Handle small/empty samples without misleading significance claims. Expose count, denominator and flag status. Use observed dates only. No forecasting or employee-level disciplinary scoring. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_analysis.py -k "weekday or high_absence"`  
 **Tests that must pass / be verified:** TC-T-13, TC-T-14; TC-F-07, TC-F-11, TC-F-22 after UI.
@@ -204,7 +205,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-07 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Create pure chart builders for daily status, department rates, weekday patterns, late breakdown and elapsed duration. Provide a filtered DataFrame-to-CSV helper with UTF-8 headers. Charts must show explicit empty states, axis labels, units and no invented data. Never embed personal or external data. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-07 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Create pure chart builders for daily status, department rates, weekday patterns, late breakdown and elapsed duration. Provide a filtered DataFrame-to-CSV helper with UTF-8 headers. Charts must show explicit empty states, axis labels, units and no invented data. Never embed personal or external data. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q tests/test_app.py -k "nonexistent"; python -m compileall src`  
 **Tests that must pass / be verified:** TC-T-20 requires adding a concrete export test during BUILD-15; TC-F-03, TC-F-19, TC-F-20 after pages.
@@ -217,7 +218,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-08 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Reuse and refine the existing src/ui.py helpers; keep Streamlit controls native and Tailwind CDN inside isolated st.iframe for decorative header/KPI cards. Build app.py as multipage entry point and shared sidebar filter state. Map nine UI specifications onto the four TRD page files. Do not remove the supplied theme. Provide clear metric definitions and synthetic-data notice. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-08 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Reuse and refine the existing src/ui.py helpers; keep Streamlit controls native and Tailwind CDN inside isolated st.iframe for decorative header/KPI cards. Build app.py as multipage entry point and shared sidebar filter state. Map nine UI specifications onto the four TRD page files. Do not remove the supplied theme. Provide clear metric definitions and synthetic-data notice. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; python -m pytest -q tests/test_app.py -k "main_app_starts"`  
 **Tests that must pass / be verified:** TC-T-16; TC-F-14, TC-F-16, TC-F-21 after all pages.
@@ -230,7 +231,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-09 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement Overview with record coverage, attendance KPI, present/absent/leave counts, daily status chart and shared filters. Show observed date coverage prominently; for zero denominator display unavailable, not a false 0% or infinity. Use src metrics and charts, no duplicate formulas. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-09 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement Overview with record coverage, attendance KPI, present/absent/leave counts, daily status chart and shared filters. Show observed date coverage prominently; for zero denominator display unavailable, not a false 0% or infinity. Use src metrics and charts, no duplicate formulas. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; python -m pytest -q tests/test_app.py -k "Overview"`  
 **Tests that must pass / be verified:** TC-F-01–TC-F-05, TC-F-17, TC-F-25; page part of TC-T-17.
@@ -243,7 +244,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-10 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build department attendance comparison, rates and weekday view with shared date/department filters. Explain denominators and exclude unobserved calendar dates from absence counts. Add no-match state. Keep responsive Plotly labels and data table. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-10 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build department attendance comparison, rates and weekday view with shared date/department filters. Explain denominators and exclude unobserved calendar dates from absence counts. Add no-match state. Keep responsive Plotly labels and data table. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; python -m pytest -q tests/test_app.py -k "Department"`  
 **Tests that must pass / be verified:** TC-F-04, TC-F-06, TC-F-07, TC-F-18; page part of TC-T-17.
@@ -256,7 +257,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-11 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build late arrivals KPI, department/month breakdown, check-in delay and recorded elapsed duration charts. Apply scheduled start + grace and make missing checkout handling visible. Do not describe elapsed duration as net work hours. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-11 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build late arrivals KPI, department/month breakdown, check-in delay and recorded elapsed duration charts. Apply scheduled start + grace and make missing checkout handling visible. Do not describe elapsed duration as net work hours. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; python -m pytest -q tests/test_app.py -k "Time_and_Lateness"`  
 **Tests that must pass / be verified:** TC-F-08–TC-F-10, TC-F-23, TC-F-24; page part of TC-T-17.
@@ -269,7 +270,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-12 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Integrate UI-05 EDA, UI-06 Insights and UI-09 About/Definitions as clearly labelled sections/expanders/tabs within the four approved TRD pages, not extra page files. Show high-absence flags with method and sample-size caveats, and no-outlier empty state. Add glossary for attendance and lateness definitions. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-12 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Integrate UI-05 EDA, UI-06 Insights and UI-09 About/Definitions as clearly labelled sections/expanders/tabs within the four approved TRD pages, not extra page files. Show high-absence flags with method and sample-size caveats, and no-outlier empty state. Add glossary for attendance and lateness definitions. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; manually inspect all relevant sections`  
 **Tests that must pass / be verified:** TC-F-07, TC-F-11, TC-F-14, TC-F-22.
@@ -282,7 +283,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-13 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build validation overview, missing/invalid/duplicate counts, schema checks, issue preview and explanatory notes. Present actual synthetic dataset findings (including missing check-outs) without changing source DB. Surface known observation-date coverage limitation. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-13 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Build validation overview, missing/invalid/duplicate counts, schema checks, issue preview and explanatory notes. Present actual synthetic dataset findings (including missing check-outs) without changing source DB. Surface known observation-date coverage limitation. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; python -m pytest -q tests/test_app.py -k "Data_Quality"`  
 **Tests that must pass / be verified:** TC-F-12, TC-F-13, TC-F-15; page part of TC-T-17.
@@ -295,7 +296,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-14 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement UI-07 data preview/download as a section of Data Quality or Overview; CSV download must match selected filters. Complete shared filter persistence, consistent empty states and navigation across four page files. Avoid separate UI-07 page unless TRD is formally amended. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-14 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Implement UI-07 data preview/download as a section of Data Quality or Overview; CSV download must match selected filters. Complete shared filter persistence, consistent empty states and navigation across four page files. Avoid separate UI-07 page unless TRD is formally amended. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `streamlit run app.py; manually verify CSV row counts and filter persistence`  
 **Tests that must pass / be verified:** TC-F-16–TC-F-21, TC-F-20; TC-T-19, TC-T-20.
@@ -308,7 +309,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-15 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Run all tests and fix implementation defects. First audit test assumptions against real schema: work_calendar uses (calendar_date, department_id); the joined view has 34 fields; attendance data has 6 observed dates. Replace placeholder test logic with actual meaningful assertions for filters and CSV; add deterministic outlier boundary tests. Keep tests honest: never delete, skip or weaken a test solely to get green. Investigate the <3 s warm local render threshold separately from cloud cold start. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-15 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Run all tests and fix implementation defects. First audit test assumptions against real schema: work_calendar uses (calendar_date, department_id); the joined view has 34 fields; attendance data has 6 observed dates. Replace placeholder test logic with actual meaningful assertions for filters and CSV; add deterministic outlier boundary tests. Keep tests honest: never delete, skip or weaken a test solely to get green. Investigate the <3 s warm local render threshold separately from cloud cold start. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q; python -m pip check; python -m compileall .`  
 **Tests that must pass / be verified:** All TC-T-01–TC-T-20 pass; execute and record all TC-F-01–TC-F-25 manually/automated; no unresolved Must failure.
@@ -321,7 +322,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-16 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Write README with purpose, synthetic-data notice, architecture, 5-table schema, setup, run, test, page guide, KPI definitions, six observation dates, limitations, screenshots only if actually captured, and deployment instructions. Record tested versions and actual test results. Do not assert live URL or passed tests without evidence. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-16 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. Write README with purpose, synthetic-data notice, architecture, 5-table schema, setup, run, test, page guide, KPI definitions, six observation dates, limitations, screenshots only if actually captured, and deployment instructions. Record tested versions and actual test results. Do not assert live URL or passed tests without evidence. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `Review README commands in clean venv; verify relative links`  
 **Tests that must pass / be verified:** TC-F-14, TC-F-15; documentation acceptance checklist.
@@ -334,7 +335,7 @@ employee-attendance-pattern-analysis/
 
 **Exact prompt for the AI (copy verbatim after selecting this task):**
 
-> You are implementing BUILD-17 of EAPA-01 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. After local DoD, push repository to GitHub, deploy app.py via Streamlit Community Cloud, check dependencies, file paths and seed SQLite read-only behavior. Verify no secrets or real employee data. Open deployed URL and smoke-test all pages, filters, charts and downloads; document actual URL only after successful deployment. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
+> You are implementing BUILD-17 of P070 Employee Attendance Pattern Analysis. Read BUILD_PLAN.md and the relevant source documents linked in Section 1 first. Do not begin any other BUILD task. After local DoD, push repository to GitHub, deploy app.py via Streamlit Community Cloud, check dependencies, file paths and seed SQLite read-only behavior. Verify no secrets or real employee data. Open deployed URL and smoke-test all pages, filters, charts and downloads; document actual URL only after successful deployment. Preserve existing IDs, the synthetic SQLite dataset, and unrelated working code. Explain any conflicts before changing definitions. Provide only the files changed, key implementation decisions, the exact checks run and their actual results, and remaining blockers. Stop after this task.
 
 **How to check it:** `python -m pytest -q; streamlit run app.py; manually test deployed URL`  
 **Tests that must pass / be verified:** All TC-F and TC-T pass locally; cloud smoke checks pass; live URL recorded.

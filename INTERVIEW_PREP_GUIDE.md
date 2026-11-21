@@ -1,6 +1,7 @@
 # 💼 Comprehensive Interview Preparation & Resume Portfolio Guide
-## Project: Employee Attendance Pattern Analysis (`EAPA-01`)
-**Author / Candidate:** Ayush Katiyar (Roll No: 2500320140036 · ABES Engineering College / HCLTech Career Shaper)  
+## Project: Employee Attendance Pattern Analysis (`P070`)
+**Author / Candidate:** Ayush Katiyar (University Roll No: 2500320140036 · ABES Engineering College)  
+**Batch ID:** ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01 | **Project Mentor:** Dinesh Sereno  
 **Live Production URL:** [https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/](https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/)  
 **GitHub Repository:** [https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis](https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis)  
 **Domain:** Workforce Operations Intelligence, Enterprise Data Engineering & HR Analytics  

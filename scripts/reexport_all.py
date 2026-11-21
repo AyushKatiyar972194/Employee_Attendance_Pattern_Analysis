@@ -3,8 +3,8 @@ import shutil
 import zipfile
 import win32com.client
 
-ppt_path = os.path.abspath('EAPA-01_Presentation.pptx')
-doc_path = os.path.abspath('HCL_Docs/EAPA-01_Project_Document.docx')
+ppt_path = os.path.abspath('P070_Presentation.pptx')
+doc_path = os.path.abspath('HCL_Docs/P070_Project_Document.docx')
 out_dir = os.path.abspath('LMS_Submission_Package')
 renders_dir = os.path.abspath('SS/slide_renders')
 os.makedirs(out_dir, exist_ok=True)
@@ -35,7 +35,7 @@ try:
 except Exception as e:
     print(f"PowerPoint COM error: {e}")
 
-# 3. Word COM: Export EAPA-01_Project_Document.docx to 1_Project_Document.pdf
+# 3. Word COM: Export P070_Project_Document.docx to 1_Project_Document.pdf
 try:
     word_app = win32com.client.Dispatch('Word.Application')
     word_app.Visible = False
@@ -49,14 +49,14 @@ except Exception as e:
     print(f"Word COM error: {e}")
 
 # 4. Rebuild LMS ZIP archive
-zip_path = os.path.join(out_dir, '6_Employee_Attendance_Pattern_Analysis_EAPA-01.zip')
+zip_path = os.path.join(out_dir, '6_Employee_Attendance_Pattern_Analysis_P070.zip')
 if os.path.exists(zip_path):
     os.remove(zip_path)
 
 include_dirs = ['pages', 'src', 'tests', 'data', 'docs', 'HCL_Docs', 'scripts', 'SS', '.streamlit']
 include_files = [
     'app.py', 'requirements.txt', 'README.md', 'PROJECT_MASTER_DOCUMENTATION.md',
-    'INTERVIEW_PREP_GUIDE.md', 'EAPA-01_Presentation.pptx', 'ABES_logo.jpg'
+    'INTERVIEW_PREP_GUIDE.md', 'P070_Presentation.pptx', 'ABES_logo.jpg'
 ]
 
 exclude_exts = {'.pyc', '.tmp', '.log'}

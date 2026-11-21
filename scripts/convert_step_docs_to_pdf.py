@@ -64,7 +64,7 @@ def convert_markdown_to_pdf(md_path, pdf_path, doc_title):
 
     story = [
         Paragraph(doc_title, h1),
-        Paragraph("HCLTech Career Shaper / Northstar Technologies · Capstone Project EAPA-01", styles["Italic"]),
+        Paragraph("HCLTech Career Shaper / Northstar Technologies · Capstone Project P070", styles["Italic"]),
         HRFlowable(width="100%", thickness=1, color=colors.HexColor("#2563EB"), spaceBefore=4, spaceAfter=10),
     ]
 

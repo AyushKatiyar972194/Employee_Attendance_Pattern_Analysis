@@ -1,4 +1,4 @@
-"""Technical data-layer tests for EAPA-01.
+"""Technical data-layer tests for P070.
 
 Expected Step 15 module contract:
 - src.data_loader.load_attendance_data(db_path) -> pandas.DataFrame

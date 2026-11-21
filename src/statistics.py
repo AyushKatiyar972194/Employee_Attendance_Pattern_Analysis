@@ -1,4 +1,4 @@
-"""Statistical analysis functions for EAPA-01.
+"""Statistical analysis functions for P070.
 
 Weekday attendance summary and high-absence date flagging
 using Q3 + 1.5 × IQR threshold.

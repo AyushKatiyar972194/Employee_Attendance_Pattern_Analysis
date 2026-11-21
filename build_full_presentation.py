@@ -132,14 +132,15 @@ def build_presentation():
             shape.text_frame.text = ""
         elif shape.name == 'TextBox 4':
             shape.text_frame.text = (
-                "Ayush Katiyar | Roll No: 2500320140036\n"
-                "MCA 2nd Year Data Analytics | Mentor: Alpna Lodhi\n"
+                "Ayush Katiyar | University Roll No: 2500320140036\n"
+                "Batch ID: ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01\n"
+                "Project ID: P070 | Project Mentor: Dinesh Sereno\n"
                 "Live App: https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/\n"
                 "GitHub: https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis"
             )
             for p in shape.text_frame.paragraphs:
                 p.font.name = 'Calibri'
-                p.font.size = Pt(12)
+                p.font.size = Pt(11)
                 p.font.color.rgb = RGBColor(0xEA, 0xEB, 0xEE)
     logo_path = 'ABES_logo.jpg' if os.path.exists('ABES_logo.jpg') else os.path.join('HCL_Docs', 'ABES_logo.jpg')
     if os.path.exists(logo_path):
@@ -575,19 +576,32 @@ def build_presentation():
                 "Live Cloud App: https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/\n"
                 "GitHub Repository: https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis\n"
                 "Local App Command: streamlit run app.py (http://localhost:8501)\n"
-                "Student: Ayush Katiyar | Roll No: 2500320140036 | Mentor: Alpna Lodhi\n\n"
+                "Student: Ayush Katiyar | University Roll No: 2500320140036\n"
+                "Batch ID: ABES_OND26_MCA 2nd Year_Data Analytics_Batch 01\n"
+                "Project ID: P070 | Project Mentor: Dinesh Sereno\n\n"
                 "Thank you · Questions & Discussion"
             )
             for p in shape.text_frame.paragraphs:
                 p.font.name = 'Calibri'
-                p.font.size = Pt(13)
+                p.font.size = Pt(12)
                 p.font.color.rgb = RGBColor(0xEA, 0xEB, 0xEE)
     if os.path.exists(logo_path):
         slide17.shapes.add_picture(logo_path, Inches(0.50), Inches(0.30), width=Inches(1.50))
 
-    # Save
+    # Global pass: replace any remaining EAPA-01 with P070 and Alpna Lodhi with Dinesh Sereno
+    for slide in prs.slides:
+        for shape in slide.shapes:
+            if shape.has_text_frame:
+                for p in shape.text_frame.paragraphs:
+                    if "EAPA-01" in p.text:
+                        p.text = p.text.replace("EAPA-01", "P070")
+                    if "Alpna Lodhi" in p.text:
+                        p.text = p.text.replace("Alpna Lodhi", "Dinesh Sereno")
+
+    # Save both filenames for backward and forward compatibility
     prs.save('EAPA-01_Presentation.pptx')
-    print("SUCCESS: EAPA-01_Presentation.pptx generated with 17 complete slides!")
+    prs.save('P070_Presentation.pptx')
+    print("SUCCESS: EAPA-01_Presentation.pptx and P070_Presentation.pptx generated with 17 complete slides!")
 
 if __name__ == '__main__':
     build_presentation()

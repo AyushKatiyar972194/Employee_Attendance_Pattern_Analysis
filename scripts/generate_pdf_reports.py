@@ -50,7 +50,7 @@ class NumberedCanvas(canvas.Canvas):
         # Suppress header and footer on page 1 (cover)
         if self._pageNumber > 1:
             # Header
-            self.drawString(54, 11 * 72 - 36, "HCLTech Career Shaper / Northstar Technologies — Project EAPA-01")
+            self.drawString(54, 11 * 72 - 36, "HCLTech Career Shaper / Northstar Technologies — Project P070")
             self.setStrokeColor(colors.HexColor("#CBD5E1"))
             self.setLineWidth(0.5)
             self.line(54, 11 * 72 - 42, 8.5 * 72 - 54, 11 * 72 - 42)
@@ -127,14 +127,14 @@ def build_github_report_pdf(output_path: str):
 
     # Title & Metadata
     story.append(Paragraph("GitHub Repository & Source Code Audit Report", title_style))
-    story.append(Paragraph("<b>Project:</b> EAPA-01 · Employee Attendance Pattern Analysis<br/><b>Author / Candidate:</b> Ayush Katiyar (Roll No: 2500320140036, ABES Engineering College / HCLTech Career Shaper)<br/><b>Organization:</b> Northstar Technologies (Noida Operations Hub)", subtitle_style))
+    story.append(Paragraph("<b>Project:</b> P070 · Employee Attendance Pattern Analysis<br/><b>Author / Candidate:</b> Ayush Katiyar (Roll No: 2500320140036, ABES Engineering College / HCLTech Career Shaper)<br/><b>Organization:</b> Northstar Technologies (Noida Operations Hub)", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#2563EB"), spaceBefore=4, spaceAfter=14))
 
     # Repo Metadata Table
     story.append(Paragraph("1. Version Control & Repository Specifications", h2_style))
     meta_data = [
         [Paragraph("<b>Parameter</b>", body_style), Paragraph("<b>Repository Specification</b>", body_style)],
-        [Paragraph("Project Name", body_style), Paragraph("<code>Employee Attendance Pattern Analysis (EAPA-01)</code>", code_inline)],
+        [Paragraph("Project Name", body_style), Paragraph("<code>Employee Attendance Pattern Analysis (P070)</code>", code_inline)],
         [Paragraph("Author / Candidate", body_style), Paragraph("<b>Ayush Katiyar</b> (Roll No: <code>2500320140036</code>)", body_style)],
         [Paragraph("Live Cloud Application", body_style), Paragraph("<code>https://employeeattendancepatternanalysis-xweeu4ylh8pneqxoxkikwk.streamlit.app/</code>", code_inline)],
         [Paragraph("GitHub Repository", body_style), Paragraph("<code>https://github.com/AyushKatiyar972194/Employee_Attendance_Pattern_Analysis</code>", code_inline)],
@@ -298,7 +298,7 @@ def build_complete_code_pdf(output_path: str, project_root: str):
     story = []
 
     # Title Page / Header
-    story.append(Paragraph("EAPA-01: Complete Source Code Repository", title_style))
+    story.append(Paragraph("P070: Complete Source Code Repository", title_style))
     story.append(Paragraph("<b>Employee Attendance Pattern Analysis · Comprehensive Software Codebase</b><br/>"
                            "Includes Core Application, Analytical Pipelines, Visualization Layer, Mathematical Metrics, and Full Test Suite.", toc_style))
     story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#2563EB"), spaceBefore=4, spaceAfter=12))

@@ -68,7 +68,7 @@ files_to_copy = [
     # Item 18: 13 Test Cases
     (f"{prefix}13_Test_Cases.pdf", os.path.join(step_docs_dir, 'Step_13_Test_Cases.pdf')),
     # Item 19: Project ZIP file
-    (f"{prefix}Employee_Attendance_Pattern_Analysis.zip", os.path.join(lms_src_dir, '6_Employee_Attendance_Pattern_Analysis_EAPA-01.zip')),
+    (f"{prefix}Employee_Attendance_Pattern_Analysis.zip", os.path.join(lms_src_dir, '6_Employee_Attendance_Pattern_Analysis_P070.zip')),
 ]
 
 copied_count = 0

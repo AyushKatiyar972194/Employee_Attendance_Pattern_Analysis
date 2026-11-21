@@ -29,3 +29,6 @@ _dataset_extracted/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Submission ZIPs (kept locally for LMS upload)
+*.zip

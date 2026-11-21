@@ -1,4 +1,4 @@
-"""Comprehensive automated test suite for EAPA-01 data quality, pipelines, and schema integrity."""
+"""Comprehensive automated test suite for P070 data quality, pipelines, and schema integrity."""
 import sqlite3
 import pandas as pd
 import pytest

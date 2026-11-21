@@ -1,5 +1,5 @@
 # Comprehensive Exploratory Data Analysis (EDA) Report
-## Enterprise Workforce Attendance Dataset (EAPA-01 Scaled)
+## Enterprise Workforce Attendance Dataset (P070 Scaled)
 **Organisation:** Northstar Technologies (Multi-Hub Indian Operations)  
 **Period:** October 1, 2026 – October 31, 2026 (Full Month Working Observation)  
 **Generated At:** 2026-11-19 20:30:40  
@@ -8,7 +8,7 @@
 
 ### Executive Summary
 
-To elevate the **Employee Attendance Pattern Analysis (EAPA-01)** project into a production-grade enterprise platform, a scaled, multi-dimensional synthetic dataset was engineered and subjected to rigorous Exploratory Data Analysis (EDA). 
+To elevate the **Employee Attendance Pattern Analysis (P070)** project into a production-grade enterprise platform, a scaled, multi-dimensional synthetic dataset was engineered and subjected to rigorous Exploratory Data Analysis (EDA). 
 
 Unlike small-sample proof-of-concepts, this scaled dataset captures authentic real-world workplace dynamics across **8 business divisions**, **120 employees**, and all **20 active working days of October 2026** (yielding **2,400 attendance records** and **248 work-calendar definitions**).
 

@@ -1,4 +1,4 @@
-"""Pytest configuration and global fixtures for EAPA-01."""
+"""Pytest configuration and global fixtures for P070."""
 import pytest
 from pathlib import Path
 from src.config import DB_PATH
