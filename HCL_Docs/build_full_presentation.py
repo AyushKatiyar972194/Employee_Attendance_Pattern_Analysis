@@ -139,10 +139,11 @@ def build_presentation():
             )
             for p in shape.text_frame.paragraphs:
                 p.font.name = 'Calibri'
-                p.font.size = Pt(11)
-                p.font.color.rgb = TEXT_DARK
-    if os.path.exists('ABES_logo.jpg'):
-        slide1.shapes.add_picture('ABES_logo.jpg', Inches(0.50), Inches(0.30), width=Inches(1.50))
+                p.font.size = Pt(12)
+                p.font.color.rgb = RGBColor(0xEA, 0xEB, 0xEE)
+    logo_path = 'ABES_logo.jpg' if os.path.exists('ABES_logo.jpg') else os.path.join('HCL_Docs', 'ABES_logo.jpg')
+    if os.path.exists(logo_path):
+        slide1.shapes.add_picture(logo_path, Inches(0.50), Inches(0.30), width=Inches(1.50))
 
     # -------------------------------------------------------------
     # 1b. Slide 4: Fix Table 4 and Footnote to eliminate overlap
@@ -579,10 +580,10 @@ def build_presentation():
             )
             for p in shape.text_frame.paragraphs:
                 p.font.name = 'Calibri'
-                p.font.size = Pt(12)
-                p.font.color.rgb = TEXT_DARK
-    if os.path.exists('ABES_logo.jpg'):
-        slide17.shapes.add_picture('ABES_logo.jpg', Inches(0.50), Inches(0.30), width=Inches(1.50))
+                p.font.size = Pt(13)
+                p.font.color.rgb = RGBColor(0xEA, 0xEB, 0xEE)
+    if os.path.exists(logo_path):
+        slide17.shapes.add_picture(logo_path, Inches(0.50), Inches(0.30), width=Inches(1.50))
 
     # Save
     prs.save('EAPA-01_Presentation.pptx')
